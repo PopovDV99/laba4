@@ -1,10 +1,34 @@
 #include <iostream>
 #include <cmath>
 #include <cassert>
+using namespace std;
 char nible_to_hex(uint8_t i)
 {
     char digits[]="0123456789abcdef";
     return digits[i];
+}
+void print_to_hex(uint8_t byte)
+{
+    cout << nible_to_hex(byte>>4);
+    cout << nible_to_hex(byte&0b00001111);
+}
+const uint8_t*
+as_bytes(const void* data) {
+    return reinterpret_cast<const uint8_t*>(data);
+}
+void print_in_hex(const void* data, size_t size) {
+    const uint8_t* bytes = as_bytes(data);
+    for (size_t i = 0; i < size; i++) {
+        print_in_hex(bytes[i]);
+
+        // Для удобства чтения: пробелы между байтам, по 16 байт на строку.
+        if ((i + 1) % 16 == 0) {
+            cout << '\n';
+        }
+        else {
+            cout << ' ';
+        }
+    }
 }
 int main()
 {
