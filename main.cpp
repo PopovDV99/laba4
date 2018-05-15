@@ -55,10 +55,40 @@ print_in_binary(const void* data, size_t size) {
         }
     }
 }
+struct Student{
+    char name[17];
+    uint16_t year;
+    float sred_ball;
+    uint8_t sex:1;
+    int classes;
+    Student*starosta;
+};
 int main()
 {
     uint16_t oper1, oper3, res;
     char oper2;
+    Student students[3];
+    {
+        {
+            "Dima";2017;5.0;0;7;
+            students[0];
+        }
+        {
+            "Sasha";2017;0.1;0;7;
+            students[0];
+        }
+        {
+            "Artem";2017;4.1;0;7;
+            nullptr;
+        }
+    }
+    cout<<endl<<"Address of array:"<<&students<<endl;
+    cout<<"size of array:"<<sizeof(students)<<endl;
+    cout<<"\t address of element: "<<"\t size of elements: "<<endl;
+    for (int i=0;i<3;i++){
+        cout<<i<<"\t"<<&students[i]<<"\t\t"<<sizeof(students[i]);
+        cout<<"\n";
+    }
     assert(nibble_to_hex(0x0) == '0');
     assert(nibble_to_hex(0x1) == '1');
     assert(nibble_to_hex(0x2) == '2');
@@ -110,6 +140,7 @@ print_in_binary(&oper2, sizeof(oper2));
 cout<<" = ";
 print_in_binary(&res, sizeof(res));
 cout<<'\n';
+        break;
 
     case'^':
 res=oper1^oper3;
@@ -125,6 +156,8 @@ print_in_binary(&oper2, sizeof(oper2));
 cout<<" = ";
 print_in_binary(&res, sizeof(res));
 cout<<'\n';
+        break;
 
 }
+
 }
