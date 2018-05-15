@@ -97,6 +97,12 @@ int main()
     cout<<sizeof(students[0].classes)<<"\t"<< offsetof(struct Student,classes)<<endl;
     cout<<"STAROSTA:\t"<<&students[0].starosta;
     cout<<sizeof(students[0].starosta)<<"\t"<< offsetof(struct Student,starosta)<<endl;
+    cout<<"Name: "<<endl;
+    cout<<"Binary"<<endl;
+    print_in_binary(&students[0].name,sizeof(students[0].name));
+    cout<<"\n Hex: \n";
+    print_in_hex(&students[0].name,sizeof(students[0].name));
+    cout<<endl;
     for (int i=0;i<3;i++){
         cout<<i<<"\t"<<&students[i]<<"\t\t"<<sizeof(students[i]);
         cout<<"\n";
