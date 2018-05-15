@@ -85,9 +85,22 @@ int main()
     cout<<endl<<"Address of array:"<<&students<<endl;
     cout<<"size of array:"<<sizeof(students)<<endl;
     cout<<"\t address of element: "<<"\t size of elements: "<<endl;
+    cout<<"FOR FIRST elem of array:\n";
+    cout<<"\t Address of field:"<<"\t sizeof field:"<<"\t offset"<<endl;
+    cout<<"NAME:\t"<<&students[0].name;
+    cout<<sizeof(students[0].name)<<"\t"<< offsetof(struct Student,name)<<endl;
+    cout<<"YEAR:\t"<<&students[0].year;
+    cout<<sizeof(students[0].year)<<"\t"<< offsetof(struct Student,year)<<endl;
+    cout<<"SRED BALL:\t"<<&students[0].sred_ball;
+    cout<<sizeof(students[0].sred_ball)<<"\t"<< offsetof(struct Student,sred_ball)<<endl;
+    cout<<"CLASSES:\t"<<&students[0].classes;
+    cout<<sizeof(students[0].classes)<<"\t"<< offsetof(struct Student,classes)<<endl;
+    cout<<"STAROSTA:\t"<<&students[0].starosta;
+    cout<<sizeof(students[0].starosta)<<"\t"<< offsetof(struct Student,starosta)<<endl;
     for (int i=0;i<3;i++){
         cout<<i<<"\t"<<&students[i]<<"\t\t"<<sizeof(students[i]);
         cout<<"\n";
+
     }
     assert(nibble_to_hex(0x0) == '0');
     assert(nibble_to_hex(0x1) == '1');
